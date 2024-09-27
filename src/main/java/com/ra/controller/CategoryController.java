@@ -36,6 +36,7 @@ public class CategoryController {
         Category category = new Category();
         category.setCategoryName(name);
         category.setCategoryStatus(status);
+
         // goi den service de them moi
         if(categoryService.save(category)){
             return "redirect:/category";
@@ -48,5 +49,23 @@ public class CategoryController {
         Category category = categoryService.findById(id);
         model.addAttribute("category",category);
         return "edit-category";
+    }
+    @PostMapping("/category-edit/{id}")
+    public String update(@PathVariable("id") int id,HttpServletRequest httpServletRequest){
+        // lay du lieu tu form
+        String name = httpServletRequest.getParameter("name");
+        boolean status = Boolean.parseBoolean(httpServletRequest.getParameter("status"));
+        // khoi tao doi tuong category
+        Category category = new Category();
+        category.setCategoryName(name);
+        category.setCategoryStatus(status);
+        // set id lay duoc tu url
+        category.setCategoryId(id);
+        // goi den service de cap nhat
+        if(categoryService.update(category)){
+            return "redirect:/category";
+        }
+        return "redirect:/category-edit"+id;
+
     }
 }

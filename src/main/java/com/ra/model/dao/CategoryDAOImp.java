@@ -53,4 +53,21 @@ public class CategoryDAOImp implements CategoryDAO{
         }
         return null;
     }
+
+    @Override
+    public Boolean update(Category category) {
+        Session session = sessionFactory.openSession();
+        try {
+            session.beginTransaction();
+            session.update(category);
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception exception){
+            session.getTransaction().rollback();
+            exception.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return false;
+    }
 }

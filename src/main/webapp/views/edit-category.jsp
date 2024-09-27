@@ -31,12 +31,12 @@
                 <div class="form-group">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="status" ${category.categoryStatus ? "checked" :""} value="1"> Actice
+                            <input class="form-check-input" type="radio" name="status" checked="${category.categoryStatus ? "checked" :""}" value="true"> Actice
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="status" ${!category.categoryStatus ? "checked" :""} value="0"> Inactive
+                            <input class="form-check-input" type="radio" name="status" checked="${!category.categoryStatus ? "checked" :""}" value="false"> Inactive
                         </label>
                     </div>
                 </div>

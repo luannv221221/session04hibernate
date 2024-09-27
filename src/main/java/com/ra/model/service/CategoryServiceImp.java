@@ -25,4 +25,9 @@ public class CategoryServiceImp implements CategoryService{
     public Category findById(int id) {
         return categoryDAO.findById(id);
     }
+
+    @Override
+    public Boolean update(Category category) {
+        return categoryDAO.update(category);
+    }
 }
