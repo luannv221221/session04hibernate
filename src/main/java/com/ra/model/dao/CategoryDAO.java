@@ -7,5 +7,6 @@ import java.util.List;
 public interface CategoryDAO {
     List<Category> findAll();
     Boolean save(Category category);
+    Category findById(int id);
 
 }

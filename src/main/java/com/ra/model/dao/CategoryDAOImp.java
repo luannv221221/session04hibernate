@@ -40,4 +40,17 @@ public class CategoryDAOImp implements CategoryDAO{
         }
         return false;
     }
+
+    @Override
+    public Category findById(int id) {
+        Session session = sessionFactory.openSession();
+        try {
+            return session.get(Category.class,id);
+        } catch (Exception exception){
+            exception.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
 }

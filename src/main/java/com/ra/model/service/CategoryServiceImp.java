@@ -20,4 +20,9 @@ public class CategoryServiceImp implements CategoryService{
     public Boolean save(Category category) {
         return categoryDAO.save(category);
     }
+
+    @Override
+    public Category findById(int id) {
+        return categoryDAO.findById(id);
+    }
 }

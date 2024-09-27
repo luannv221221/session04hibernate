@@ -1,12 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: DELL
-  Date: 9/25/2024
-  Time: 9:17 PM
+  Date: 9/27/2024
+  Time: 6:53 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,30 +19,33 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Danh sách danh mục</h1>
-    <a class="btn btn-success" href="category-add">Thêm mới</a>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${categories}" var="category">
-            <tr>
-                <td scope="row">${category.categoryId}</td>
-                <td>${category.categoryName}</td>
-                <td>${category.categoryStatus}</td>
-                <td>
-                    <a href="/category-edit/${category.categoryId}" class="btn btn-primary">Edit</a>
-                </td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form method="post" action="">
+                <div class="form-group">
+                    <label >Category Name</label>
+                    <input type="text" class="form-control" name="name" value="${category.categoryName}">
+                </div>
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="status" ${category.categoryStatus ? "checked" :""} value="1"> Actice
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="status" ${!category.categoryStatus ? "checked" :""} value="0"> Inactive
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </form>
+        </div>
+    </div>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
