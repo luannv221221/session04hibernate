@@ -20,7 +20,8 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Danh sachs danh mucj</h1>
+    <h1>Danh sách danh mục</h1>
+    <a class="btn btn-success" href="category-add">Thêm mới</a>
     <table class="table">
         <thead>
         <tr>

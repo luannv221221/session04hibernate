@@ -18,6 +18,6 @@ public class CategoryServiceImp implements CategoryService{
 
     @Override
     public Boolean save(Category category) {
-        return null;
+        return categoryDAO.save(category);
     }
 }

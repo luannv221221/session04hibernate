@@ -19,6 +19,11 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<nav class="nav justify-content-center">
+    <a class="nav-link active" href="/category">Quản lý danh mục</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link disabled" href="#">Disabled link</a>
+</nav>
 <div class="container">
     <div class="jumbotron">
         <h1 class="display-3">Home Page</h1>
