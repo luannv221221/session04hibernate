@@ -39,6 +39,9 @@
                 <td>${category.categoryStatus}</td>
                 <td>
                     <a href="/category-edit/${category.categoryId}" class="btn btn-primary">Edit</a>
+                    <a href="/category-delete/${category.categoryId}"
+                       class="btn btn-danger" onclick="return confirm('chac chans ko')">Delete</a>
+
                 </td>
             </tr>
         </c:forEach>

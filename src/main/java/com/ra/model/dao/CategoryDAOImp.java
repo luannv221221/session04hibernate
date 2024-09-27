@@ -70,4 +70,21 @@ public class CategoryDAOImp implements CategoryDAO{
         }
         return false;
     }
+
+    @Override
+    public void delete(int id) {
+        Session session = sessionFactory.openSession();
+        try {
+            session.beginTransaction();
+            session.delete(findById(id));
+            session.getTransaction().commit();
+
+        } catch (Exception exception){
+            session.getTransaction().rollback();
+            exception.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+    }
 }

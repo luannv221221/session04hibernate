@@ -68,4 +68,10 @@ public class CategoryController {
         return "redirect:/category-edit"+id;
 
     }
+    @GetMapping("category-delete/{id}")
+    public String delete(@PathVariable("id") int id){
+        categoryService.delete(id);
+        return "redirect:/category";
+    }
+
 }

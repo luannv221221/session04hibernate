@@ -30,4 +30,9 @@ public class CategoryServiceImp implements CategoryService{
     public Boolean update(Category category) {
         return categoryDAO.update(category);
     }
+
+    @Override
+    public void delete(int id) {
+        categoryDAO.delete(id);
+    }
 }

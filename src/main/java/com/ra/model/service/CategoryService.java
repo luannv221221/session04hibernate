@@ -9,4 +9,5 @@ public interface CategoryService {
     Boolean save(Category category);
     Category findById(int id);
     Boolean update(Category category);
+    void delete(int id);
 }
